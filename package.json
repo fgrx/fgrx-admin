@@ -5,6 +5,7 @@
   "author": "Fabien Grignoux",
   "private": true,
   "scripts": {
+    "now-build": "nuxt build --spa",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
