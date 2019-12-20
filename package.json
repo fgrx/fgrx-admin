@@ -25,7 +25,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.9.0",
     "firebase": "^7.6.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "tiptap-vuetify": "^2.8.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

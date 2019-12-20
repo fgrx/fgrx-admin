@@ -17,7 +17,19 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.min.css'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -26,15 +38,16 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '@/assets/main.scss',
-  ],
+  css: ['@/assets/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     {
       src: '~/plugins/firebase.js'
+    },
+    {
+      src: '~/plugins/tiptap-vuetify.js'
     }
   ],
   /*
@@ -51,9 +64,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/axios',
-  ],
+  modules: ['@nuxtjs/axios'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -79,6 +90,7 @@ export default {
    ** Build configuration
    */
   build: {
+    
     extend(config, { isDev, isClient, isServer }) {
       if (isServer) {
         config.externals = {
@@ -86,6 +98,7 @@ export default {
           '@firebase/firestore': 'commonjs @firebase/firestore'
         }
       }
+      transpile: ['vuetify/lib', 'tiptap-vuetify']
     }
     // extend(config, ctx) {}
   }

@@ -7,7 +7,7 @@
     <v-alert v-if="fail" type="danger" dismissible>
       An error has occured
     </v-alert>
-    
+
     <v-form ref="form" v-model="valid">
       <v-text-field
         v-model="title"
@@ -29,7 +29,11 @@
 
       <v-textarea label="Resumé" rows="4" v-model="resume"></v-textarea>
 
-      <v-textarea label="Content" v-model="content" rows="30"></v-textarea>
+      <tiptap-vuetify
+        label="Content"
+        v-model="content"
+        :extensions="extensions"
+      />
 
       <v-checkbox v-model="published" label="Published ?"></v-checkbox>
 
@@ -41,12 +45,32 @@
 </template>
 
 <script>
+import {
+  TiptapVuetify,
+  Heading,
+  Bold,
+  Italic,
+  Strike,
+  Underline,
+  Code,
+  Paragraph,
+  BulletList,
+  OrderedList,
+  ListItem,
+  Link,
+  Blockquote,
+  HardBreak,
+  HorizontalRule,
+  History
+} from 'tiptap-vuetify'
+
 export default {
+  components: { TiptapVuetify },
   props: ['mode', 'postOrigin'],
   data() {
     return {
-      success:false,
-      fail:false,
+      success: false,
+      fail: false,
       valid: true,
       title: '',
       slug: '',
@@ -57,12 +81,36 @@ export default {
       image: '',
       published: '',
       id: '',
-      nameRules: [(v) => !!v || 'This field is required']
+      nameRules: [(v) => !!v || 'This field is required'],
+      extensions: [
+        History,
+        Blockquote,
+        Link,
+        Underline,
+        Strike,
+        Italic,
+        ListItem,
+        BulletList,
+        OrderedList,
+        [
+          Heading,
+          {
+            options: {
+              levels: [1, 2, 3]
+            }
+          }
+        ],
+        Bold,
+        Code,
+        HorizontalRule,
+        Paragraph,
+        HardBreak
+      ]
     }
   },
   mounted() {
-    this.success=false
-    this.fail=false
+    this.success = false
+    this.fail = false
     if (this.mode === 'edition') {
       this.id = this.postOrigin.id
       this.title = this.postOrigin.title
@@ -88,12 +136,11 @@ export default {
     },
     updatePost(post) {
       post.id = this.id
-      try{
+      try {
         this.$store.dispatch('posts/updatePost', post)
-      }
-      catch(error){
-        console.log("failed to update "+error)
-        this.fail=true
+      } catch (error) {
+        console.log('failed to update ' + error)
+        this.fail = true
       }
       this.success = true
     },
