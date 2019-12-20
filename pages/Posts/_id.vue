@@ -23,6 +23,7 @@
 import PostForm from '~/components/forms/PostForm'
 
 export default {
+  middleware: 'auth',
   data() {
     return {
       post: {},

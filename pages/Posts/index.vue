@@ -48,6 +48,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   data() {
     return {
       posts: (this.posts = this.$store.state.posts.posts)
