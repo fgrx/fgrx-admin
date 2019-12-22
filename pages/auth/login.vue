@@ -1,6 +1,6 @@
 <template>
-  <v-layout>
-    <v-flex class="text-center">
+  <v-layout row wrap justify-center>
+    <v-flex xs12 sm8 md6>
       <h1>Connexion</h1>
       <v-form ref="form">
         <v-text-field

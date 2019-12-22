@@ -48,6 +48,7 @@
 import {
   TiptapVuetify,
   Heading,
+  Image,
   Bold,
   Italic,
   Strike,
@@ -85,6 +86,7 @@ export default {
       extensions: [
         History,
         Blockquote,
+        Image,
         Link,
         Underline,
         Strike,
