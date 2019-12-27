@@ -1,5 +1,4 @@
 import { fireDB } from '~/plugins/firebase.js'
-import Vue from 'vue'
 
 export const state = () => ({
   posts: []
@@ -57,8 +56,7 @@ export const actions = {
   async fetchPosts({ commit }) {
     let refPosts = fireDB.collection('posts').orderBy('date', 'asc')
     const postsCollection = await refPosts.get()
-    
-    const posts=[]
+
     postsCollection.forEach((postItem) => {
       let post = actions.buildPostFromData(postItem.id, postItem.data())
       commit('ADD_POST', post)

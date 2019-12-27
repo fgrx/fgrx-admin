@@ -57,6 +57,11 @@ export default {
           icon: 'mdi-post',
           title: 'Posts',
           to: '/posts'
+        },
+        {
+          icon: 'mdi-view-dashboard-outline',
+          title: 'Portfolio',
+          to: '/portfolio'
         }
       ],
       miniVariant: false,
