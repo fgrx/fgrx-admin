@@ -135,6 +135,7 @@ export default {
     },
     saveNewPost(post) {
       this.success = this.$store.dispatch('posts/addPost', post)
+      this.$router.replace({ path: '/posts' })
     },
     updatePost(post) {
       post.id = this.id

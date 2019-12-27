@@ -8,6 +8,19 @@
         color="indigo"
         absolute
         top
+        left
+        to="/"
+      >
+        <v-icon dark>mdi-arrow-left</v-icon>
+      </v-btn>
+
+      <v-btn
+        class="top-button"
+        fab
+        dark
+        color="indigo"
+        absolute
+        top
         right
         to="/posts/add"
       >
