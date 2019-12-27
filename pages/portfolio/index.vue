@@ -28,21 +28,24 @@
       </v-btn>
       <h1>Portfolio management</h1>
       <v-list two-line subheader>
-        <template v-for="(itemPorfolio, index) in portfolio">
+        <template v-for="(itemPortfolio, index) in portfolio">
           <v-list-item
-            :key="itemPorfolio.title"
+            :key="itemPortfolio.title"
           >
             <v-list-item-content>
-              <v-list-item-title v-text="itemPorfolio.title"></v-list-item-title>
+              <v-list-item-title v-text="itemPortfolio.title"></v-list-item-title>
+              <v-list-item-subtitle
+                v-text="'Rank :' + itemPortfolio.rank"
+              ></v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-action>
               <v-btn icon>
-                <nuxt-link :to="{ name: 'portfolio-id', params: { id: itemPorfolio.id } }">
+                <nuxt-link :to="{ name: 'portfolio-id', params: { id: itemPortfolio.id } }">
                   <v-icon color="grey lighten-1">mdi-pen</v-icon>
                 </nuxt-link>
               </v-btn>
-              <v-btn @click="deletePortfolio(itemPorfolio.id)" icon>
+              <v-btn @click="deletePortfolio(itemPortfolio.id)" icon>
                 <v-icon color="red lighten-1">mdi-delete</v-icon>
               </v-btn>
             </v-list-item-action>

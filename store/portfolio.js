@@ -54,7 +54,7 @@ export const actions = {
     return itemPortfolio
   },
   async fetchPortfolio({ commit }) {
-    let RefFirestore= fireDB.collection('portfolio').orderBy('rank', 'desc')
+    let RefFirestore= fireDB.collection('portfolio').orderBy('rank', 'asc')
     const PortfolioCollection = await RefFirestore.get()
 
     PortfolioCollection.forEach((item) => {
