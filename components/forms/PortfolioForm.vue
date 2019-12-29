@@ -24,9 +24,13 @@
         v-model="description"
       ></v-textarea>
 
+      <v-text-field v-model="tech" label="Tech"></v-text-field>
+
       <v-text-field v-model="url" label="URL"></v-text-field>
 
       <v-text-field v-model="github" label="URL Github"></v-text-field>
+
+
 
       <v-text-field v-model="rank" label="Order"></v-text-field>
 
@@ -111,6 +115,7 @@ export default {
       this.url = this.itemPortfolioOrigin.url != undefined ? this.itemPortfolioOrigin.url : null
       this.github = this.itemPortfolioOrigin.github != undefined ? this.itemPortfolioOrigin.github : null
       this.rank = this.itemPortfolioOrigin.rank != undefined ? this.itemPortfolioOrigin.rank : null
+      this.tech = this.itemPortfolioOrigin.tech != undefined ? this.itemPortfolioOrigin.tech : null
       this.image = this.itemPortfolioOrigin.image != undefined ? this.itemPortfolioOrigin.image : null
     }
   },
@@ -144,7 +149,8 @@ export default {
         url: this.url,
         github: this.github,
         rank: this.rank,
-        image: this.image
+        image: this.image,
+        tech:this.tech
       }
     }
   }
