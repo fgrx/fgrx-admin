@@ -148,7 +148,7 @@ export default {
         description: this.description,
         url: this.url,
         github: this.github,
-        rank: this.rank,
+        rank: parseInt(this.rank,10),
         image: this.image,
         tech:this.tech
       }
