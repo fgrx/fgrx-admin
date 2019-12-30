@@ -34,7 +34,7 @@ export const actions = {
     commit('RESET_Portfolio')
   },
   removeItemPortfolio({commit},id){
-    fireDB.collection("Portfolio").doc(id).delete()
+    fireDB.collection("portfolio").doc(id).delete()
     commit('REMOVE_ITEMPORTFOLIO',id)
   },
   async addItemPortfolio({commit},itemPortfolioData){

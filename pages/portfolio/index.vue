@@ -73,7 +73,7 @@ export default {
   methods: {
     deletePortfolio(id) {
       var result = confirm('Do you really want to delete ?')
-      if (result) this.$store.dispatch('portfolio/removePortfolio', id)
+      if (result) this.$store.dispatch('portfolio/removeItemPortfolio', id)
     }
   }
 }
