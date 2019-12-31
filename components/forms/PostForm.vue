@@ -53,7 +53,7 @@ import {
   Italic,
   Strike,
   Underline,
-  Code,
+  CodeBlock,
   Paragraph,
   BulletList,
   OrderedList,
@@ -103,7 +103,7 @@ export default {
           }
         ],
         Bold,
-        Code,
+        CodeBlock,
         HorizontalRule,
         Paragraph,
         HardBreak
