@@ -25,7 +25,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.9.0",
     "firebase": "^7.6.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "tiptap-vuetify": "^2.8.0"
   },
   "devDependencies": {
